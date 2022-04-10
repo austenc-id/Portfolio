@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import django_heroku
-from .secrets import KEY, DB
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = KEY
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,7 +77,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': DB
+    'default': {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "HOST": "ec2-3-229-161-70.compute-1.amazonaws.com",
+        "NAME": "dfv2ibak8bdk8h",
+        "USER": "rbkvroudrflsia",
+        "PORT": "5432",
+        "PASSWORD": "c9707777227cf542a55c0c9bdd66b090d765768027d0fbca96cb9a52845375f3"
+    }
 }
 
 
