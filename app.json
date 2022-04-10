@@ -2,7 +2,7 @@
     "name": "Dev DB/API",
     "description": "Django RESTful API for my .dev site",
     "image": "heroku/python",
-    "repository": "https://github.com/austenc-id/dev-api",
+    "repository": "https://github.com/austenc-id/dev-db",
     "keywords": [
         "python",
         "django"
