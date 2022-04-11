@@ -4,8 +4,9 @@ from rest_framework.permissions import (IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
 from .serializers import (UserSerializer,
                           GroupSerializer,
-                          StorySerializer)
-from content.models import Story
+                          StorySerializer,
+                          LinkSerializer)
+from content.models import Story, Link
 # Create your views here.
 
 
@@ -33,4 +34,9 @@ class StoryViewSet(ModelViewSet):
     """
     queryset = Story.objects.all().order_by('ID')
     serializer_class = StorySerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+class LinkViewSet(ModelViewSet):
+    queryset = Link.objects.all().order_by(('ID'))
+    serializer_class = LinkSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
