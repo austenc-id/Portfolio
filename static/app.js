@@ -4,6 +4,7 @@ Vue.createApp({
         return {
             title: 'Austen Myers',
             sub_title: 'Portfolio',
+            links: [],
             pages: [
                 {
                     id: 0,
@@ -20,7 +21,15 @@ Vue.createApp({
             active_section: ''
         }
     },
+    created() {
+        this.getLinks()
+    },
     methods: {
+        async getLinks(){
+            await fetch('https://acmf-dev.herokuapp.com/api/links')
+                .then(response => response.json())
+                .then(data => (this.links = data.results))
+        },
         async renderPage(page) {
             this.active_page = this.pages[page.id]
             this.pages.forEach(page => {
@@ -32,8 +41,6 @@ Vue.createApp({
                     .then(response => response.json())
                     .then(data => (this.active_page.sections = data.results))
             }
-
-
         },
         renderSection(section) {
             this.active_section = section

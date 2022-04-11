@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="./icons/python.png" type="image/x-icon">
+        <link rel="shortcut icon" href="./static/assets/icons/python.png" type="image/x-icon">
         <title>Portfolio - Austen Myers</title>
         <link rel="stylesheet" href="./static/style.css">
     </head>
@@ -13,8 +13,14 @@
     <body id="body">
         <div id="app">
             <header id="header">
-                <h1 id="title">--title--</h1>
-                <h2 id="sub-title">--sub_title--</h2>
+                <div id="titles">
+                    <h1 id="title">--title--</h1>
+                    <h2 id="sub-title">--sub_title--</h2>
+                </div>
+                <nav id="header-nav">
+                    <a v-for="link in links" :href="link.url" target="_blank" v-html="link.icon" class="nav-link header-link">
+                    </a>
+                </nav>
             </header>
             <nav id="navbar">
                 <h3 v-for="page in pages" :id="'nav-link-' + page.id" class="nav-link" @click="renderPage(page)">--page.title--</h3>

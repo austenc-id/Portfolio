@@ -37,6 +37,14 @@
     }
     #header {
         text-align: start;
+        display: flex;
+        justify-content: space-between;
+        margin: 3%;
+    }
+    #header-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     #navbar {
         display: flex;
@@ -77,6 +85,11 @@
         font-size: 28px;
         margin: 2% 0%;
         color: var(--wave);
+    }
+    svg {
+        width: 28px;
+        height: 28px;
+        margin: 2%;
     }
     #section-title{
         font-size: 28px;
