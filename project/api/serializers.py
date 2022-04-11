@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from stories.models import Story
+from content.models import Story
 from rest_framework.serializers import HyperlinkedModelSerializer
 
 

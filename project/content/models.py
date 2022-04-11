@@ -1,4 +1,4 @@
-from django.db.models import Model, AutoField, CharField, TextField
+from django.db.models import Model, AutoField, CharField, TextField, URLField
 
 # Create your models here.
 
@@ -8,7 +8,11 @@ class Base(Model):
     label = CharField(max_length=14)
 
     def __str__(self):
-        return f'#{self.ID} - {self.label}'
+        return f'{self.label}'
+
+class Link(Base):
+    url = URLField()
+    icon = TextField()
 
 
 class Story(Base):

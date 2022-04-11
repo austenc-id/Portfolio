@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # Project
     'api',
-    'stories',
+    'content',
 ]
 
 MIDDLEWARE = [

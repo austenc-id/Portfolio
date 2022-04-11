@@ -5,7 +5,7 @@ from rest_framework.permissions import (IsAuthenticated,
 from .serializers import (UserSerializer,
                           GroupSerializer,
                           StorySerializer)
-from stories.models import Story
+from content.models import Story
 # Create your views here.
 
 
