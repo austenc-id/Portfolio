@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./icons/python.png" type="image/x-icon">
+        <title>Portfolio - Austen Myers</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <div id="app">
+            <header>
+                <h1>--title--</h1>
+                <h2>--sub_title--</h2>
+            </header>
+            <nav>
+                <h3 v-for="page in pages" class="nav-link" @click="renderPage(page)">--page.title--</h3>
+            </nav>
+            <main v-if="active_page.sections">
+                <nav>
+                    <h4 class="nav-link" v-for="section in active_page.sections" @click="renderSection(section)">--section.title--</h4>
+                </nav>
+                <div class="content">
+                    <h3>--active_section.title--</h3>
+                    <p>--active_section.content--</p>
+                </div>
+            </main>
+        </div>
+    </body>
+    <script src="./scripts/vue.js"></script>
+    <script type="module" src="./app.js"></script>
+
+</html>
