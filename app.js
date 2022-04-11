@@ -10,11 +10,6 @@ Vue.createApp({
                     title: 'About',
                     sections: []
                 },
-                {
-                    id: 1,
-                    title: 'Test',
-                    sections: []
-                },
             ],
             active_page: {},
             active_section: ''
