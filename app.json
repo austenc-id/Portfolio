@@ -5,7 +5,8 @@
     "repository": "https://github.com/austenc-id/dev-db",
     "keywords": [
         "python",
-        "django"
+        "django",
+        "django-rest-framework"
     ],
     "addons": [
         "heroku-postgresql"
