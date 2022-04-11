@@ -7,30 +7,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="./icons/python.png" type="image/x-icon">
         <title>Portfolio - Austen Myers</title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./static/style.css">
     </head>
 
-    <body>
+    <body id="body">
         <div id="app">
-            <header>
-                <h1>--title--</h1>
-                <h2>--sub_title--</h2>
+            <header id="header">
+                <h1 id="title">--title--</h1>
+                <h2 id="sub-title">--sub_title--</h2>
             </header>
-            <nav>
-                <h3 v-for="page in pages" class="nav-link" @click="renderPage(page)">--page.title--</h3>
+            <nav id="navbar">
+                <h3 v-for="page in pages" :id="'nav-link-' + page.id" class="nav-link" @click="renderPage(page)">--page.title--</h3>
             </nav>
-            <main v-if="active_page.sections">
-                <nav>
-                    <h4 class="nav-link" v-for="section in active_page.sections" @click="renderSection(section)">--section.title--</h4>
+            <main v-if="active_page.sections" id="page">
+                <nav id="page-nav">
+                    <h4 v-for="section in active_page.sections" :id="'page-nav-' + section.label" class="nav-link section-nav" @click="renderSection(section)">--section.title--</h4>
                 </nav>
-                <div class="content">
-                    <h3>--active_section.title--</h3>
-                    <p>--active_section.content--</p>
+                <div id="page-content">
+                    <h3 id="section-title">--active_section.title--</h3>
+                    <p id="section-content">--active_section.content--</p>
                 </div>
             </main>
         </div>
     </body>
-    <script src="./scripts/vue.js"></script>
-    <script type="module" src="./app.js"></script>
+    <script src="./static/assets/scripts/vue.js"></script>
+    <script type="module" src="./static/app.js"></script>
 
 </html>

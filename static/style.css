@@ -1,0 +1,121 @@
+@import './assets/style/reset.css';
+@font-face {
+    font-family: Ubuntu;
+    src: url(./assets/fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
+
+:root {
+    --cocoa: #352727;
+    --mocha: #251d1d;
+    --espresso: #181515;
+    --milk: #8b6969;
+    --froth: #5c4646;
+    --forest: #327730;
+    --lava: #a73729;
+    --ocean: #2a5e8f;
+    --wave: #4e7fad;
+    --nunito: "Nunito", sans-serif;
+    --ubuntu: "Ubuntu", sans-serif;
+    --border-thin: 1px solid var(--froth);
+    --border-thick: 2px solid var(--froth);
+    --border-xthick: 3px solid var(--froth);
+}
+
+/* Containers */
+@media screen {
+    #body {
+        background-color: var(--espresso);
+        color: var(--milk);
+        font-family: var(--ubuntu);
+        margin: 4%;
+    }
+    #app {
+        border-radius: 5px;
+        background-color: var(--mocha);
+        border: var(--border-xthick);
+        padding: 2%;
+    }
+    #header {
+        text-align: start;
+    }
+    #navbar {
+        display: flex;
+        justify-content: space-around;
+        border-radius: 5px;
+        border-top: var(--border-thick);
+        border-bottom: var(--border-thick);
+        margin: 4%;
+        padding: 2%;
+    }
+    #page {
+        display: flex;
+        text-align: center;
+    }
+    #page-nav {
+        flex-direction: column;
+        text-align: end;
+        width: 30%;
+        border-radius: 5px;
+        border-top: var(--border-thin);
+        border-bottom: var(--border-thin);
+    }
+    #page-content {
+        width: 70%;
+        padding: 4%;
+    }
+}
+
+/* Elements */
+@media screen {
+
+    #title {
+        font-size: 42px;
+        color: var(--lava);
+    }
+
+    #sub-title {
+        font-size: 28px;
+        margin: 2% 0%;
+        color: var(--wave);
+    }
+    #section-title{
+        font-size: 28px;
+        color: var(--ocean);
+        margin: 2%;
+    }
+    #section-content{
+        margin-top: 4%;
+        text-align: justify;
+        text-indent: 5%;
+        line-height: 1.25;
+    }
+}
+
+/* Classes */
+@media screen {
+    .nav-link {
+        color: var(--forest);
+        cursor: pointer;
+        font-size: 24px;
+        padding: 2%;
+    }
+    .section-nav {
+        margin: 6% 0%;
+        font-size: 18px;
+    }
+    .active {
+        color: var(--lava);
+        background-color: var(--cocoa);
+    }
+    .nav-link.active {
+        border-radius: 5px;
+        border-top: var(--border-thin);
+        border-bottom: var(--border-thin);
+    }
+    .section-nav.active {
+        border-radius: 5px;
+        border-top: none;
+        border-right: var(--border-thick);
+        border-bottom: var(--border-thick);
+    }
+}
