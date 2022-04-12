@@ -49,6 +49,7 @@
     #navbar {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         border-radius: 5px;
         border-top: var(--border-thick);
         border-bottom: var(--border-thick);
@@ -98,7 +99,7 @@
     }
     #section-content{
         margin-top: 4%;
-        text-align: justify;
+        text-align: start;
         text-indent: 5%;
         line-height: 1.25;
     }
@@ -118,17 +119,17 @@
     }
     .active {
         color: var(--lava);
-        background-color: var(--cocoa);
     }
-    .nav-link.active {
+    /* .nav-link.active {
         border-radius: 5px;
         border-top: var(--border-thin);
         border-bottom: var(--border-thin);
-    }
+    } */
     .section-nav.active {
         border-radius: 5px;
         border-top: none;
         border-right: var(--border-thick);
         border-bottom: var(--border-thick);
+        background-color: var(--cocoa);
     }
 }

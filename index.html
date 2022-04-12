@@ -23,15 +23,15 @@
                 </nav>
             </header>
             <nav id="navbar">
-                <h3 v-for="page in pages" :id="'nav-link-' + page.id" class="nav-link" @click="renderPage(page)">--page.title--</h3>
+                <h3 v-for="page in pages" :id="'nav-link-' + page.id" class="nav-link" @click="renderPage(page)" v-html="page.label"></h3>
             </nav>
-            <main v-if="active_page.sections" id="page">
-                <nav id="page-nav">
-                    <h4 v-for="section in active_page.sections" :id="'page-nav-' + section.label" class="nav-link section-nav" @click="renderSection(section)">--section.title--</h4>
+            <main id="page" v-if="active_page">
+                <nav id="page-nav" v-if="active_page.count > 0">
+                    <h4 v-for="section in active_page.sections" :id="'page-nav-' + section.id" class="nav-link section-nav" @click="renderSection(section)">--section.title--</h4>
                 </nav>
                 <div id="page-content">
                     <h3 id="section-title">--active_section.title--</h3>
-                    <p id="section-content">--active_section.content--</p>
+                    <p id="section-content" v-for="paragraph in active_section.paragraphs">--paragraph.content--</p>
                 </div>
             </main>
         </div>
