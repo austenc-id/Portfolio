@@ -1,4 +1,4 @@
-from django.db.models import Model, AutoField, CharField, TextField, URLField
+from django.db.models import Model, IntegerField, CharField, TextField, URLField, AutoField
 
 # Create your models here.
 
@@ -11,12 +11,14 @@ class Base(Model):
         return f'{self.label}'
 
 class Link(Base):
+    link_id = IntegerField(default=0)
     url = URLField()
     icon = TextField()
-
 
 class Story(Base):
     class Meta:
         verbose_name_plural = 'Stories'
+    story_id = IntegerField(default=0)
     title = CharField(max_length=14)
     content = TextField()
+    group = CharField(max_length=14, choices=[('about', 'about'),('tech', 'tech')])
