@@ -13,8 +13,8 @@ class Story(Model):
     class Meta:
         verbose_name_plural = 'Stories'
     id = AutoField(primary_key=True)
+    order = IntegerField(default=0)
     title = CharField(max_length=14)
-    content = TextField()
     page_index = IntegerField(default=1)
     paragraphs = ManyToManyField('Paragraph', related_name='story_paragraphs')
     def __str__(self):
