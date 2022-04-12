@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1234'
+SECRET_KEY = 'django-insecure-d*4e+f38(rmtxs-0_)9nv#0or48n66ajs+un_q!umlz@c^8)yd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['acmf-dev-api.herokuapp.com']
+ALLOWED_HOSTS = ['acmf-dev.herokuapp.com']
 
 
 # Application definition
@@ -41,13 +42,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     # Project
-    'api',
     'content',
+    'delivery',
 ]
 
 MIDDLEWARE = [
     # Third Party
     'corsheaders.middleware.CorsMiddleware',
+    # Standard
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -84,13 +86,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "HOST": "ec2-3-229-161-70.compute-1.amazonaws.com",
-        "NAME": "dfv2ibak8bdk8h",
-        "USER": "rbkvroudrflsia",
+        "HOST": "ec2-34-197-84-74.compute-1.amazonaws.com",
+        "NAME": "d1cjr5l0k3kgu5",
+        "USER": "ckaxfzhfqiixff",
         "PORT": "5432",
-        "PASSWORD": "c9707777227cf542a55c0c9bdd66b090d765768027d0fbca96cb9a52845375f3"
+        "PASSWORD": "1b6da139ccaaaa32a0cba9de74bae841f0ef06ad8522ec3f1472d49e22037c21"
     }
 }
+
 
 
 # Password validation

@@ -2,7 +2,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import (IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
-from .serializers import (UserSerializer,
+from content.serializers import (UserSerializer,
                           GroupSerializer,
                           LinkSerializer,
                           StorySerializer,
@@ -29,7 +29,7 @@ class GroupViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
 
 class LinkViewSet(ModelViewSet):
-    queryset = Link.objects.all().order_by(('ID'))
+    queryset = Link.objects.all().order_by(('id'))
     serializer_class = LinkSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
@@ -37,11 +37,11 @@ class StoryViewSet(ModelViewSet):
     """
     API endpoint that allows Stories to be viewed or edited.
     """
-    queryset = Story.objects.all().order_by('ID')
+    queryset = Story.objects.all().order_by('id')
     serializer_class = StorySerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 class ParagraphViewSet(ModelViewSet):
-    queryset = Paragraph.objects.all().order_by('ID')
+    queryset = Paragraph.objects.all().order_by('id')
     serializer_class = ParagraphSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]

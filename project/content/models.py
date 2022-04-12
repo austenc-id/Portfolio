@@ -2,28 +2,25 @@ from django.db.models import Model, IntegerField, CharField, TextField, URLField
 
 # Create your models here.
 
-
-class Base(Model):
-    ID = AutoField(primary_key=True)
-    label = CharField(max_length=14)
-
-    def __str__(self):
-        return f'{self.label}'
-
-class Link(Base):
-    link_id = IntegerField(default=0)
+class Link(Model):
+    id = AutoField(primary_key=True)
     url = URLField()
     icon = TextField()
+    def __str__(self):
+        return f'{self.url}'
 
-class Story(Base):
+class Story(Model):
     class Meta:
         verbose_name_plural = 'Stories'
-    story_id = IntegerField(default=0)
+    id = AutoField(primary_key=True)
     title = CharField(max_length=14)
     content = TextField()
     page_index = IntegerField(default=1)
     paragraphs = ManyToManyField('Paragraph', related_name='story_paragraphs')
-
-class Paragraph(Base):
-    paragraph_id = IntegerField(default=0)
+    def __str__(self):
+        return f'{self.title}'
+class Paragraph(Model):
+    id = AutoField(primary_key=True)
     content=TextField()
+    def __str__(self):
+        return f'paragraph id:{self.id}'
