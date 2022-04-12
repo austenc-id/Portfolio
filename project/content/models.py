@@ -21,4 +21,4 @@ class Story(Base):
     story_id = IntegerField(default=0)
     title = CharField(max_length=14)
     content = TextField()
-    group = CharField(max_length=14, choices=[('about', 'about'),('tech', 'tech')])
+    group = CharField(max_length=14)
