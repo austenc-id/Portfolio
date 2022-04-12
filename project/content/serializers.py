@@ -17,14 +17,14 @@ class GroupSerializer(HyperlinkedModelSerializer):
 class LinkSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Link
-        fields = ['id', 'label', 'url', 'icon']
+        fields = ['id', 'url', 'icon']
 
 class StorySerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Story
-        fields = ['id', 'label', 'title', 'content', 'paragraphs', 'page_index', 'url']
+        fields = ['id', 'order', 'title', 'paragraphs', 'page_index', 'url']
 
 class ParagraphSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Paragraph
-        fields = ['id', 'label', 'content']
+        fields = ['id', 'content']
