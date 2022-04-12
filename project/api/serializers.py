@@ -23,4 +23,4 @@ class StorySerializer(HyperlinkedModelSerializer):
 class LinkSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Link
-        fields = ['story_id', 'label', 'url', 'icon']
+        fields = ['link_id', 'label', 'url', 'icon']
