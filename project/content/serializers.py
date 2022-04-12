@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework.serializers import HyperlinkedModelSerializer
-from .models import Link, Story, Paragraph
+from .models import Link, Chapter, Story, Paragraph
 
 
 class UserSerializer(HyperlinkedModelSerializer):
@@ -14,15 +14,24 @@ class GroupSerializer(HyperlinkedModelSerializer):
         model = Group
         fields = ['url', 'name']
 
+
 class LinkSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Link
         fields = ['id', 'url', 'icon']
 
+
+class ChapterSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = Chapter
+        fields = ['id', 'title', 'stories']
+
+
 class StorySerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Story
         fields = ['id', 'order', 'title', 'paragraphs', 'page_index', 'url']
+
 
 class ParagraphSerializer(HyperlinkedModelSerializer):
     class Meta:
