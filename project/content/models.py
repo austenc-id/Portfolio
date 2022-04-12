@@ -1,4 +1,4 @@
-from django.db.models import Model, IntegerField, CharField, TextField, URLField, AutoField
+from django.db.models import Model, IntegerField, CharField, TextField, URLField, AutoField, ManyToManyField
 
 # Create your models here.
 
@@ -22,3 +22,8 @@ class Story(Base):
     title = CharField(max_length=14)
     content = TextField()
     page_index = IntegerField(default=1)
+    paragraphs = ManyToManyField('Paragraph', related_name='story_paragraphs')
+
+class Paragraph(Base):
+    paragraph_id = IntegerField(default=0)
+    content=TextField()
