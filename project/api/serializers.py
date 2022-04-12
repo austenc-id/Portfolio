@@ -18,9 +18,9 @@ class GroupSerializer(HyperlinkedModelSerializer):
 class StorySerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Story
-        fields = ['label', 'title', 'content', 'group', 'url']
+        fields = ['story_id', 'label', 'title', 'content', 'group', 'url']
 
 class LinkSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Link
-        fields = ['label', 'url', 'icon']
+        fields = ['story_id', 'label', 'url', 'icon']
