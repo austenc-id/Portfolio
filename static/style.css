@@ -23,6 +23,9 @@
 
 /* Containers */
 @media screen {
+    #load-screen {
+        text-align: center;
+    }
     #body {
         background-color: var(--espresso);
         color: var(--milk);
@@ -46,7 +49,7 @@
         flex-direction: column;
         justify-content: space-around;
     }
-    #navbar {
+    #chapters {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -56,11 +59,11 @@
         margin: 4%;
         padding: 2%;
     }
-    #page {
+    #chapter {
         display: flex;
         text-align: center;
     }
-    #page-nav {
+    #stories {
         flex-direction: column;
         text-align: end;
         width: 30%;
@@ -68,7 +71,7 @@
         border-top: var(--border-thin);
         border-bottom: var(--border-thin);
     }
-    #page-content {
+    #story {
         width: 70%;
         padding: 4%;
     }
@@ -76,7 +79,12 @@
 
 /* Elements */
 @media screen {
-
+    #loading-message {
+        font-size: 42px;
+    }
+    #timer {
+        font-size: 24px;
+    }
     #title {
         font-size: 42px;
         color: var(--lava);
@@ -92,12 +100,12 @@
         height: 28px;
         margin: 2%;
     }
-    #section-title{
+    #story-title{
         font-size: 28px;
         color: var(--ocean);
         margin: 2%;
     }
-    #section-content{
+    #story-content{
         margin-top: 4%;
         text-align: start;
         text-indent: 5%;
@@ -113,7 +121,7 @@
         font-size: 24px;
         padding: 2%;
     }
-    .section-nav {
+    .story-link {
         margin: 6% 0%;
         font-size: 18px;
     }
@@ -125,7 +133,7 @@
         border-top: var(--border-thin);
         border-bottom: var(--border-thin);
     } */
-    .section-nav.active {
+    .story-link.active {
         border-radius: 5px;
         border-top: none;
         border-right: var(--border-thick);

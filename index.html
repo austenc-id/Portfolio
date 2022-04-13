@@ -12,28 +12,35 @@
 
     <body id="body">
         <div id="app">
-            <header id="header">
-                <div id="titles">
-                    <h1 id="title">--title--</h1>
-                    <h2 id="sub-title">--sub_title--</h2>
-                </div>
-                <nav id="header-nav">
-                    <a v-for="link in links" :href="link.url" target="_blank" v-html="link.icon" class="nav-link header-link">
-                    </a>
+            <div id="load-screen" v-if="loading">
+                <h1 id="loading-message">--loading--</h1>
+                <h1 id="timer" v-if="load_time">--load_time--</h1>
+            </div>
+            <div v-else="">
+                <header id="header">
+                    <div id="titles">
+                        <h1 id="title">--title--</h1>
+                        <h2 id="sub-title">--sub_title--</h2>
+                    </div>
+                    <nav id="header-nav">
+                        <a v-for="link in links" :href="link.url" target="_blank" v-html="link.icon" class="nav-link header-link">
+                        </a>
+                    </nav>
+                </header>
+                <nav id="chapters">
+                    <h3 v-for="chapter in chapters" :id="'chapter-' + chapter.id" class="nav-link" @click="renderChapter(chapter)" v-html="chapter.title"></h3>
                 </nav>
-            </header>
-            <nav id="navbar">
-                <h3 v-for="page in pages" :id="'nav-link-' + page.id" class="nav-link" @click="renderPage(page)" v-html="page.label"></h3>
-            </nav>
-            <main id="page" v-if="active_page">
-                <nav id="page-nav" v-if="active_page.count > 0">
-                    <h4 v-for="section in active_page.sections" :id="'page-nav-' + section.id" class="nav-link section-nav" @click="renderSection(section)">--section.title--</h4>
-                </nav>
-                <div id="page-content">
-                    <h3 id="section-title">--active_section.title--</h3>
-                    <p id="section-content" v-for="paragraph in active_section.paragraphs">--paragraph.content--</p>
-                </div>
-            </main>
+                <main id="chapter" v-if="active.chapter">
+                    <nav id="stories" v-if="active.chapter.stories">
+                        <h4 v-for="story in active.chapter.stories" :id="'story-' + story.id" class="nav-link story-link" @click="renderStory(story)">--story.title--</h4>
+                    </nav>
+                    <div id="story">
+                        <h3 id="story-title">--active.story.title--</h3>
+                        <p id="story-content" v-for="paragraph in active.story.paragraphs">--paragraph.content--</p>
+                    </div>
+                </main>
+            </div>
+
         </div>
     </body>
     <script src="./static/assets/scripts/vue.js"></script>
