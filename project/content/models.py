@@ -46,4 +46,4 @@ class Paragraph(Model):
     content = TextField()
 
     def __str__(self):
-        return self.label
+        return f'#{self.id} - {self.label}'
