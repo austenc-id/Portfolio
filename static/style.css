@@ -37,6 +37,7 @@
         background-color: var(--mocha);
         border: var(--border-xthick);
         padding: 2%;
+        max-width: 750px;
     }
     #header {
         text-align: start;

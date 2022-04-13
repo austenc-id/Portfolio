@@ -29,7 +29,7 @@ Vue.createApp({
             await fetchContent()
                 .then(data => (
                     this.loading = 'Loading...',
-                    this.load_time = 2,
+                    this.load_time = 4,
                     this.links = data.links,
                     this.chapters = data.chapters
                 ))
