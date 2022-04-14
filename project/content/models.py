@@ -14,7 +14,7 @@ class Link(Model):
 
 class Chapter(Model):
     id = AutoField(primary_key=True)
-    title = CharField(max_length=14)
+    title = CharField(max_length=1000)
     stories = ManyToManyField(
         'Story',
         related_name='chapter_stories',
