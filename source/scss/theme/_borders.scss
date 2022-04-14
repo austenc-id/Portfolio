@@ -1,0 +1,51 @@
+
+@mixin borders($size: 1px, $left: 1, $right: 1, $top: 1, $bottom: 1, $radius: 5) {
+    border-left: ($size * $left) solid;
+    border-right: ($size * $right) solid;
+    border-top: ($size * $top) solid;
+    border-bottom: ($size * $bottom) solid;
+    border-radius: 1px * $radius;
+}
+
+#app {
+    @include borders(3px);
+
+    #header{
+        @include borders(2px);
+        #titles {
+            #title {
+                border-radius: 5px;
+            }
+
+            #sub-title {
+                @include borders(1px, 0, 0)
+            }
+        }
+    }
+
+    #chapter-nav {
+        @include borders(2px, 0, 0);
+        .active {
+            @include borders(1px);
+        }
+    }
+    #chapter {
+        #story-nav {
+            @include borders(1px, 0, 0);
+
+            .active {
+                @include borders(2px, 0, 1, 0, 1);
+            }
+        }
+
+        #story {
+            #story-title {
+                @include borders(1px, 0, 0);
+            }
+
+            #story-content {
+                border-radius: 5px;
+            }
+        }
+    }
+}

@@ -29,13 +29,12 @@ Vue.createApp({
             await fetchContent()
                 .then(data => (
                     this.loading = 'Loading...',
-                    this.load_time = 4,
+                    this.load_time = 5,
                     this.links = data.links,
                     this.chapters = data.chapters
                 ))
             for (let i = this.load_time; i > 0; i--) {
                 await sleep(1)
-                    .then(data => (console.log(this.load_time, i)))
                     .then(data => (this.load_time--))
                     .then(data => {
                         if (this.load_time === 0) {

@@ -1,0 +1,136 @@
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+$unit-x: 2vw;
+$unit-y: 1vw;
+$between: space-between;
+$around: space-around;
+
+@mixin margin-x($left: 1, $right: 1) {
+    margin-left: $left * $unit-x;
+    margin-right: $right * $unit-x;
+}
+
+@mixin margin-y($top: 1, $bottom: 1) {
+    margin-top: $top * $unit-y;
+    margin-bottom: $bottom * $unit-y;
+}
+
+@mixin margin {
+    @include margin-y;
+    @include margin-x;
+}
+
+@mixin padding-x($left: 1, $right: 1) {
+    padding-left: $left * $unit-x;
+    padding-right: $right * $unit-x;
+}
+
+@mixin padding-y($top: 1, $bottom: 1) {
+    padding-top: $top * $unit-y;
+    padding-bottom: $bottom * $unit-y;
+}
+
+@mixin padding {
+    @include padding-y;
+    @include padding-x;
+}
+
+@mixin space {
+    @include margin;
+    @include padding;
+}
+
+@mixin align($display: flex, $jc: $between, $ai: inherit) {
+    display: $display;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+#body {
+    #app {
+        #load-screen {
+            text-align: center;
+            @include space;
+            // #message {}
+
+            // #timer {}
+        }
+
+        #header {
+            @include align($ai: center);
+            @include padding;
+            @include margin-x(2,2);
+            @include margin-y(4,2);
+            height: 15vh;
+
+            #titles {
+                @include margin-x;
+                @include align;
+                flex-direction: column;
+                text-align: center;
+                // #title {}
+
+                // #sub-title {}
+            }
+
+            #links {
+                @include align($jc: $around);
+                flex-direction: column;
+                @include margin;
+
+                .link {
+                    @include margin-y;
+                }
+            }
+        }
+
+        #chapter-nav {
+            @include align($jc: $around, $ai: center);
+            @include padding;
+            @include margin-y;
+            @include margin-x(3, 3);
+            // .chapter-link {}
+            .active {
+                @include padding;
+            }
+        }
+
+        #chapter {
+            display: flex;
+            @include space;
+
+            #story-nav {
+                text-align: end;
+                @include space;
+
+                .story-link {
+                    @include padding;
+                }
+            }
+
+            #story {
+                #story-title {
+                    text-align: center;
+                    @include margin-y(1.5, 0);
+                    @include margin-x;
+                }
+
+                #story-content {
+                    text-indent: $unit-x * 2;
+                    line-height: 1.5;
+                    @include margin;
+
+                    p {
+                        @include padding;
+                    }
+                }
+            }
+        }
+    }
+}

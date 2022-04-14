@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="./static/assets/icons/python.png" type="image/x-icon">
-        <title>Austen C. Myers</title>
-        <link rel="stylesheet" href="./static/style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./static/portraits/artistic.jpg" type="image/x-icon">
+    <title>Austen C. Myers</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
 
-    <body id="body">
-        <div id="app">
-            <div id="load-screen" v-if="loading">
-                <h1 id="loading-message">--loading--</h1>
-                <h1 id="timer" v-if="load_time">--load_time--</h1>
-            </div>
-            <div v-else="">
-                <header id="header">
-                    <div id="titles">
-                        <h1 id="title">--title--</h1>
-                        <h2 id="sub-title">--sub_title--</h2>
-                    </div>
-                    <nav id="header-nav">
-                        <a v-for="link in links" :href="link.url" target="_blank" v-html="link.icon" class="nav-link header-link">
-                        </a>
-                    </nav>
-                </header>
-                <nav id="chapters">
-                    <h3 v-for="chapter in chapters" :id="'chapter-' + chapter.id" class="nav-link" @click="renderChapter(chapter)" v-html="chapter.title"></h3>
+<body id="body">
+    <div id="app">
+        <template id="landing-page" v-if="loading">
+            <main id="load-screen">
+                <h1 id="message">--loading--</h1>
+                <h2 id="timer" v-if="load_time">--load_time--</h2>
+            </main>
+        </template>
+        <template id="app-content" v-else>
+            <header id="header">
+                <section id="titles">
+                    <h1 id="title">--title--</h1>
+                    <h2 id="sub-title">--sub_title--</h2>
+                </section>
+                <nav id="links">
+                    <a v-for="link in links" :href="link.url" target="_blank" v-html="link.icon" class="link">
+                    </a>
                 </nav>
-                <main id="chapter" v-if="active.chapter">
-                    <nav id="stories" v-if="active.chapter.stories">
-                        <h4 v-for="story in active.chapter.stories" :id="'story-' + story.id" class="nav-link story-link" @click="renderStory(story)">--story.title--</h4>
-                    </nav>
-                    <div id="story">
-                        <h3 id="story-title">--active.story.title--</h3>
-                        <p id="story-content" v-for="paragraph in active.story.paragraphs">--paragraph.content--</p>
-                    </div>
-                </main>
-            </div>
+            </header>
+            <nav id="chapter-nav">
+                <h3 v-for="chapter in chapters" :id="'chapter-' + chapter.id" class="chapter-link" @click="renderChapter(chapter)" v-html="chapter.title"></h3>
+            </nav>
+            <main id="chapter" v-if="active.chapter">
+                <nav id="story-nav" v-if="active.chapter.stories">
+                    <h4 v-for="story in active.chapter.stories" :id="'story-' + story.id" class="story-link" @click="renderStory(story)">--story.title--</h4>
+                </nav>
+                <main id="story">
+                    <h3 id="story-title">--active.story.title--</h3>
+                    <main id="story-content">
+                        <p v-for="paragraph in active.story.paragraphs">--paragraph.content--</p>
+                    </main>
 
-        </div>
-    </body>
-    <script src="./static/assets/scripts/vue.js"></script>
-    <script type="module" src="./static/app.js"></script>
+                </main>
+            </main>
+        </template>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script type="module" src="./static/app.js"></script>
 
 </html>

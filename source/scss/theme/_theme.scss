@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+$mocha: #251d1d;
+$espresso: #181515;
+$froth: #5c4646;
+$forest: #327730;
+$lava: #a73729;
+$ocean: #2a5e8f;
+$wave: #4e7fad;
+$ubuntu: "Ubuntu", sans-serif;
+
+
+
+
+#body {
+    background-color: $espresso;
+
+    #app {
+        background-color: $mocha;
+        font-family: $ubuntu;
+        color: $froth;
+
+        #load-screen {
+            color: $lava;
+
+            * {
+                font-weight: normal;
+            }
+        }
+
+        #header {
+            background-color: $espresso;
+
+            #titles {
+
+                #title {
+                    color: $lava;
+                    font-weight: normal;
+                }
+
+                #sub-title {
+                    border-color: $froth;
+                    color: $ocean;
+                    background-color: $mocha;
+                    font-weight: normal;
+                }
+            }
+            #links {
+                svg {
+                    fill: $forest;
+                }
+            }
+        }
+
+
+
+        #chapter-nav {
+            cursor: pointer;
+            background-color: $espresso;
+
+            * {
+                font-weight: normal;
+                color: $forest;
+                svg {
+                    fill: $forest;
+                }
+            }
+
+            .active {
+                color: $lava;
+                background-color: $mocha;
+                svg {
+                    fill: $lava;
+                }
+            }
+        }
+
+        #chapter {
+            #story-nav {
+                cursor: pointer;
+                background-color: $espresso;
+
+                * {
+                    font-weight: normal;
+                    color: $forest;
+                }
+
+                .active {
+                    color: $lava;
+                    background-color: $mocha;
+                }
+            }
+
+            #story {
+                #story-title {
+                    border-color: $froth;
+                    color: $ocean;
+                    background-color: $espresso;
+                }
+
+                #story-content {
+                    color: $wave;
+                    background-color: $espresso;
+                }
+            }
+        }
+    }
+}

@@ -23,12 +23,11 @@ export function resetActiveElements() {
         }
     }
     catch {
-        console.log('no active elements')
     }
 }
 export function resetActiveStory() {
     try {
-        let sections = document.getElementById('stories')
+        let sections = document.getElementById('story-nav')
         sections = sections.children
         for (let i = 0; i < sections.length; i++) {
             let element = sections[i]
@@ -36,6 +35,5 @@ export function resetActiveStory() {
         }
     }
     catch {
-        console.log('no active section')
     }
 }

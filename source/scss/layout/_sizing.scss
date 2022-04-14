@@ -1,0 +1,48 @@
+#app {
+    max-width: 750px;
+    svg {
+        width: 28px;
+        height: 28px;
+    }
+    #load-screen {
+        #message {
+            font-size: 42px;
+        }
+
+        #timer {
+            font-size: 24px;
+        }
+    }
+    #header {
+        #titles {
+            width: 90%;
+            #title {
+                font-size: 38px;
+            }
+
+            #sub-title {
+                font-size: 28px;
+                width: 57%;
+            }
+        }
+    }
+
+    #chapter-nav {
+        font-size: 20px;
+    }
+    #chapter {
+        #story-nav {
+            width: 30%;
+            font-size: 18px;
+            height: fit-content;
+        }
+
+        #story {
+            width: 70%;
+
+            #story-title {
+                font-size: 28px;
+            }
+        }
+    }
+}
