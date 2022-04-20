@@ -163,9 +163,6 @@ section.chapter div.story .content {
     padding: 0.5vw;
     margin: 0.5vw;
   }
-  #app section.chapter div.story {
-    width: fit-content;
-  }
 }
 body {
   display: flex;
