@@ -10,42 +10,43 @@
 #app {
     @include borders(3px);
 
-    header{
-        @include borders(2px);
-        .titles {
-            .title {
-                border-radius: 5px;
-            }
 
-            .sub-title {
-                @include borders(1px, 0, 0)
-            }
+}
+header{
+    @include borders(2px);
+    .titles {
+        .title {
+            border-radius: 5px;
+        }
+
+        .sub-title {
+            @include borders(1px, 0, 0)
         }
     }
+}
 
-    nav.chapters {
-        @include borders(2px, 0, 0);
+nav.chapters {
+    @include borders(2px, 0, 0);
+    .active {
+        @include borders(1px);
+    }
+}
+section.chapter {
+    nav.stories {
+        @include borders(1px, 0, 0);
+
         .active {
-            @include borders(1px);
+            @include borders(2px, 0, 1, 0, 1);
         }
     }
-    section.chapter {
-        nav.stories {
-            @include borders(1px, 0, 0);
 
-            .active {
-                @include borders(2px, 0, 1, 0, 1);
-            }
+    div.story {
+        .title {
+            @include borders(1px, 0, 0);
         }
 
-        div.story {
-            .title {
-                @include borders(1px, 0, 0);
-            }
-
-            .content {
-                border-radius: 5px;
-            }
+        .content {
+            border-radius: 5px;
         }
     }
 }

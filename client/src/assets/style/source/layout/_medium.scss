@@ -1,0 +1,28 @@
+@media (min-width: 500px) {
+    body {
+        margin: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #app {
+            margin: 4vw;
+        }
+    }
+}
+@media (min-width: 650px) {
+    #app {
+        max-width: 750px;
+        section.chapter {
+            nav.stories {
+                width: fit-content;
+                .link {
+                    padding: 0.5vw;
+                    margin: 0.5vw;
+                }
+            }
+            div.story {
+                width: fit-content;
+            }
+        }
+    }
+}

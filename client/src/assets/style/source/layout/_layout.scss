@@ -1,139 +1,137 @@
-$unit-x: 2vw;
-$unit-y: 1vw;
+@use "./medium";
 $between: space-between;
 $around: space-around;
-
-@mixin margin-x($left: 1, $right: 1) {
-    margin-left: $left * $unit-x;
-    margin-right: $right * $unit-x;
-}
-
-@mixin margin-y($top: 1, $bottom: 1) {
-    margin-top: $top * $unit-y;
-    margin-bottom: $bottom * $unit-y;
-}
-
-@mixin margin {
-    @include margin-y;
-    @include margin-x;
-}
-
-@mixin padding-x($left: 1, $right: 1) {
-    padding-left: $left * $unit-x;
-    padding-right: $right * $unit-x;
-}
-
-@mixin padding-y($top: 1, $bottom: 1) {
-    padding-top: $top * $unit-y;
-    padding-bottom: $bottom * $unit-y;
-}
-
-@mixin padding {
-    @include padding-y;
-    @include padding-x;
-}
-
-@mixin space {
-    @include margin;
-    @include padding;
-}
 
 @mixin align($display: flex, $jc: $between, $ai: inherit) {
     display: $display;
     justify-content: $jc;
     align-items: $ai;
 }
-
-* {
+@mixin no-space() {
     margin: 0;
     padding: 0;
 }
 
 body {
-    margin: 3%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 0;
+    padding: 0;
     #app {
-        .load-screen {
+        height: 100%;
+        padding: 2vw;
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+}
+
+.load-screen {
+    text-align: center;
+    margin: 2vw 1vw;
+    padding: 2vw 1vw;
+    .message {
+        font-size: 42px;
+    }
+
+    .timer {
+        font-size: 24px;
+    }
+}
+header {
+    @include align($ai: center);
+    padding: 2vw 1vw;
+    margin: 2vw 2vw 4vw;
+    height: 15vh;
+    .titles {
+        margin: 0 1vw;
+        @include align;
+        flex-direction: column;
+        text-align: center;
+        * {
+            @include no-space;
+        }
+        width: 90%;
+        h1.title {
+            font-size: 2.75em;
+        }
+
+        h2.title {
+            font-size: 1.75em;
+            width: 57%;
+        }
+    }
+    .links {
+        padding-right: 3vw;
+        @include align($jc: $around);
+        display: flex;
+        flex-direction: column;
+        margin: 2vw 1vw;
+        .link {
+            margin: 0.5vw 0;
+        }
+    }
+}
+nav.chapters {
+    @include align($jc: $around, $ai: center);
+    padding: 1vw;
+    margin: 1vw 3vw;
+    font-size: 1.5em;
+    * {
+        @include no-space;
+        padding: 0.5vw 1vw 0.25vw;
+        width: fit-content;
+    }
+}
+section.chapter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1vw;
+    padding: 1vw;
+    .title {
+        text-align: center;
+        @include no-space;
+        font-size: 32px;
+        width: 80%;
+    }
+    nav.stories {
+        display: flex;
+        justify-content: space-around;
+        margin: 1vw;
+        padding: 1vw;
+        font-size: 1.33em;
+        width: 100%;
+        height: fit-content;
+        .link {
+            @include no-space;
+            padding: 1vw 1vw;
+            width: fit-content;
+        }
+        .active {
+            border: 1px solid;
+        }
+    }
+
+    div.story {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .title {
             text-align: center;
-            @include space;
-            // #message {}
-
-            // #timer {}
+            margin: 1vw;
+            font-size: 28px;
         }
-        header {
-            @include align($ai: center);
-            @include padding;
-            @include margin-x(2, 2);
-            @include margin-y(4, 2);
-            height: 15vh;
 
-            .titles {
-                @include margin-x;
-                @include align;
-                flex-direction: column;
-                text-align: center;
-                // #title {}
-
-                // #sub-title {}
-            }
-
-            .links {
-                @include align($jc: $around);
-                flex-direction: column;
-                @include margin;
-
-                .link {
-                    @include margin-y;
-                }
-            }
-        }
-        nav.chapters {
-            @include align($jc: $around, $ai: center);
-            @include padding;
-            @include margin-y;
-            @include margin-x(3, 3);
-            // .chapter-link {}
-            .active {
-                @include padding;
-            }
-        }
-        section.chapter {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            @include space;
-            .title {
-                text-align: center;
-            }
-            nav.stories {
-                text-align: end;
-                @include space;
-
-                .link {
-                    @include padding;
-                }
-            }
-            div.story {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .title {
-                    text-align: center;
-                    @include margin-y(1.5, 0);
-                    @include margin-x;
-                }
-
-                .content {
-                    text-indent: $unit-x * 2;
-                    line-height: 1.5;
-                    @include margin;
-                    margin-top: 3vw;
-                    p {
-                        @include padding;
-                    }
-                }
+        .content {
+            text-indent: 4vw;
+            line-height: 1.5;
+            width: 85%;
+            margin: 1vw;
+            p {
+                padding: 1vw 4vw;
             }
         }
     }
