@@ -50,6 +50,10 @@ $around: space-around;
 }
 
 body {
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     #app {
         .load-screen {
             text-align: center;
