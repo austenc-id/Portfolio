@@ -1,0 +1,43 @@
+@use './theme/theme';
+@use './theme/borders';
+@use './layout/sizing';
+@use './layout/layout';
+
+
+// elements map
+body {
+    noscript {}
+    #app {
+        main.load-screen {
+            h1.message {}
+            h2.timer {}
+        }
+        main.app {
+            header {
+                div.titles {
+                    h1.title {}
+                    h2.title {}
+                }
+                div.links {
+                    a.link{}
+                }
+            }
+            nav.chapters {
+                h3.link {}
+            }
+            section.chapter {
+                h1.title {}
+                nav.stories {
+                    h4.link {}
+                }
+                div.story {
+                    h3.title {}
+                    div.content {
+                        p {}
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -10,27 +10,27 @@
 #app {
     @include borders(3px);
 
-    #header{
+    header{
         @include borders(2px);
-        #titles {
-            #title {
+        .titles {
+            .title {
                 border-radius: 5px;
             }
 
-            #sub-title {
+            .sub-title {
                 @include borders(1px, 0, 0)
             }
         }
     }
 
-    #chapter-nav {
+    nav.chapters {
         @include borders(2px, 0, 0);
         .active {
             @include borders(1px);
         }
     }
-    #chapter {
-        #story-nav {
+    section.chapter {
+        nav.stories {
             @include borders(1px, 0, 0);
 
             .active {
@@ -38,12 +38,12 @@
             }
         }
 
-        #story {
-            #story-title {
+        div.story {
+            .title {
                 @include borders(1px, 0, 0);
             }
 
-            #story-content {
+            .content {
                 border-radius: 5px;
             }
         }

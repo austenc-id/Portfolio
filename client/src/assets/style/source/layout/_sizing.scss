@@ -4,44 +4,51 @@
         width: 28px;
         height: 28px;
     }
-    #load-screen {
-        #message {
+    .load-screen {
+        .message {
             font-size: 42px;
         }
 
-        #timer {
+        .timer {
             font-size: 24px;
         }
     }
-    #header {
-        #titles {
+    header {
+        .titles {
             width: 90%;
-            #title {
+            h1.title {
                 font-size: 38px;
             }
 
-            #sub-title {
+            h2.title {
                 font-size: 28px;
                 width: 57%;
             }
         }
     }
 
-    #chapter-nav {
+    nav.chapters {
         font-size: 20px;
     }
-    #chapter {
-        #story-nav {
-            width: 30%;
+    section.chapter {
+        .title {
+            font-size: 32px;
+            width: 80%;
+        }
+        nav.stories {
+            width: 25%;
             font-size: 18px;
             height: fit-content;
         }
 
-        #story {
-            width: 70%;
+        div.story {
+            width: 65%;
 
-            #story-title {
+            .title {
                 font-size: 28px;
+            }
+            .content {
+                width: 85%;
             }
         }
     }

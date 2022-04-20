@@ -1,70 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
-#body {
+body {
   background-color: #181515;
 }
-#body #app {
+body #app {
   background-color: #251d1d;
   font-family: "Ubuntu", sans-serif;
   color: #5c4646;
 }
-#body #app #load-screen {
+body #app .load-screen {
   color: #a73729;
 }
-#body #app #load-screen * {
+body #app .load-screen * {
   font-weight: normal;
 }
-#body #app #header {
+body #app header {
   background-color: #181515;
 }
-#body #app #header #titles #title {
+body #app header .titles h1.title {
   color: #a73729;
   font-weight: normal;
 }
-#body #app #header #titles #sub-title {
+body #app header .titles h2.title {
   border-color: #5c4646;
   color: #2a5e8f;
   background-color: #251d1d;
   font-weight: normal;
 }
-#body #app #header #links svg {
+body #app header .links svg {
   fill: #327730;
 }
-#body #app #chapter-nav {
+body #app nav.chapters {
   cursor: pointer;
   background-color: #181515;
 }
-#body #app #chapter-nav * {
+body #app nav.chapters * {
   font-weight: normal;
   color: #327730;
 }
-#body #app #chapter-nav * svg {
+body #app nav.chapters * svg {
   fill: #327730;
 }
-#body #app #chapter-nav .active {
+body #app nav.chapters .active {
   color: #a73729;
   background-color: #251d1d;
 }
-#body #app #chapter-nav .active svg {
+body #app nav.chapters .active svg {
   fill: #a73729;
 }
-#body #app #chapter #story-nav {
+body #app section.chapter svg {
+  fill: #a73729;
+}
+body #app section.chapter .title {
+  color: #a73729;
+}
+body #app section.chapter nav.stories {
   cursor: pointer;
   background-color: #181515;
 }
-#body #app #chapter #story-nav * {
+body #app section.chapter nav.stories * {
   font-weight: normal;
   color: #327730;
 }
-#body #app #chapter #story-nav .active {
+body #app section.chapter nav.stories .active {
   color: #a73729;
   background-color: #251d1d;
 }
-#body #app #chapter #story #story-title {
+body #app section.chapter div.story .title {
   border-color: #5c4646;
   color: #2a5e8f;
   background-color: #181515;
 }
-#body #app #chapter #story #story-content {
+body #app section.chapter div.story .content {
   color: #4e7fad;
   background-color: #181515;
 }
@@ -76,59 +82,59 @@
   border-bottom: 3px solid;
   border-radius: 5px;
 }
-#app #header {
+#app header {
   border-left: 2px solid;
   border-right: 2px solid;
   border-top: 2px solid;
   border-bottom: 2px solid;
   border-radius: 5px;
 }
-#app #header #titles #title {
+#app header .titles .title {
   border-radius: 5px;
 }
-#app #header #titles #sub-title {
+#app header .titles .sub-title {
   border-left: 0px solid;
   border-right: 0px solid;
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-radius: 5px;
 }
-#app #chapter-nav {
+#app nav.chapters {
   border-left: 0px solid;
   border-right: 0px solid;
   border-top: 2px solid;
   border-bottom: 2px solid;
   border-radius: 5px;
 }
-#app #chapter-nav .active {
+#app nav.chapters .active {
   border-left: 1px solid;
   border-right: 1px solid;
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-radius: 5px;
 }
-#app #chapter #story-nav {
+#app section.chapter nav.stories {
   border-left: 0px solid;
   border-right: 0px solid;
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-radius: 5px;
 }
-#app #chapter #story-nav .active {
+#app section.chapter nav.stories .active {
   border-left: 0px solid;
   border-right: 2px solid;
   border-top: 0px solid;
   border-bottom: 2px solid;
   border-radius: 5px;
 }
-#app #chapter #story #story-title {
+#app section.chapter div.story .title {
   border-left: 0px solid;
   border-right: 0px solid;
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-radius: 5px;
 }
-#app #chapter #story #story-content {
+#app section.chapter div.story .content {
   border-radius: 5px;
 }
 
@@ -139,46 +145,50 @@
   width: 28px;
   height: 28px;
 }
-#app #load-screen #message {
+#app .load-screen .message {
   font-size: 42px;
 }
-#app #load-screen #timer {
+#app .load-screen .timer {
   font-size: 24px;
 }
-#app #header #titles {
+#app header .titles {
   width: 90%;
 }
-#app #header #titles #title {
+#app header .titles h1.title {
   font-size: 38px;
 }
-#app #header #titles #sub-title {
+#app header .titles h2.title {
   font-size: 28px;
   width: 57%;
 }
-#app #chapter-nav {
+#app nav.chapters {
   font-size: 20px;
 }
-#app #chapter #story-nav {
-  width: 30%;
+#app section.chapter .title {
+  font-size: 32px;
+  width: 80%;
+}
+#app section.chapter nav.stories {
+  width: 25%;
   font-size: 18px;
   height: fit-content;
 }
-#app #chapter #story {
-  width: 70%;
+#app section.chapter div.story {
+  width: 65%;
 }
-#app #chapter #story #story-title {
+#app section.chapter div.story .title {
   font-size: 28px;
 }
+#app section.chapter div.story .content {
+  width: 85%;
+}
 
-h1,
-h2,
-h3,
-h4 {
+* {
   margin: 0;
   padding: 0;
 }
 
-#body #app #load-screen {
+body #app .load-screen {
   text-align: center;
   margin-top: 1vw;
   margin-bottom: 1vw;
@@ -189,7 +199,7 @@ h4 {
   padding-left: 2vw;
   padding-right: 2vw;
 }
-#body #app #header {
+body #app header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -203,7 +213,7 @@ h4 {
   margin-bottom: 2vw;
   height: 15vh;
 }
-#body #app #header #titles {
+body #app header .titles {
   margin-left: 2vw;
   margin-right: 2vw;
   display: flex;
@@ -212,7 +222,7 @@ h4 {
   flex-direction: column;
   text-align: center;
 }
-#body #app #header #links {
+body #app header .links {
   display: flex;
   justify-content: space-around;
   align-items: inherit;
@@ -222,11 +232,11 @@ h4 {
   margin-left: 2vw;
   margin-right: 2vw;
 }
-#body #app #header #links .link {
+body #app header .links .link {
   margin-top: 1vw;
   margin-bottom: 1vw;
 }
-#body #app #chapter-nav {
+body #app nav.chapters {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -239,14 +249,16 @@ h4 {
   margin-left: 6vw;
   margin-right: 6vw;
 }
-#body #app #chapter-nav .active {
+body #app nav.chapters .active {
   padding-top: 1vw;
   padding-bottom: 1vw;
   padding-left: 2vw;
   padding-right: 2vw;
 }
-#body #app #chapter {
+body #app section.chapter {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 1vw;
   margin-bottom: 1vw;
   margin-left: 2vw;
@@ -256,7 +268,10 @@ h4 {
   padding-left: 2vw;
   padding-right: 2vw;
 }
-#body #app #chapter #story-nav {
+body #app section.chapter .title {
+  text-align: center;
+}
+body #app section.chapter nav.stories {
   text-align: end;
   margin-top: 1vw;
   margin-bottom: 1vw;
@@ -267,28 +282,34 @@ h4 {
   padding-left: 2vw;
   padding-right: 2vw;
 }
-#body #app #chapter #story-nav .story-link {
+body #app section.chapter nav.stories .link {
   padding-top: 1vw;
   padding-bottom: 1vw;
   padding-left: 2vw;
   padding-right: 2vw;
 }
-#body #app #chapter #story #story-title {
+body #app section.chapter div.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #app section.chapter div.story .title {
   text-align: center;
   margin-top: 1.5vw;
   margin-bottom: 0vw;
   margin-left: 2vw;
   margin-right: 2vw;
 }
-#body #app #chapter #story #story-content {
+body #app section.chapter div.story .content {
   text-indent: 4vw;
   line-height: 1.5;
   margin-top: 1vw;
   margin-bottom: 1vw;
   margin-left: 2vw;
   margin-right: 2vw;
+  margin-top: 3vw;
 }
-#body #app #chapter #story #story-content p {
+body #app section.chapter div.story .content p {
   padding-top: 1vw;
   padding-bottom: 1vw;
   padding-left: 2vw;

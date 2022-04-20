@@ -1,11 +1,3 @@
-h1,
-h2,
-h3,
-h4 {
-    margin: 0;
-    padding: 0;
-}
-
 $unit-x: 2vw;
 $unit-y: 1vw;
 $between: space-between;
@@ -52,24 +44,28 @@ $around: space-around;
     align-items: $ai;
 }
 
-#body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
     #app {
-        #load-screen {
+        .load-screen {
             text-align: center;
             @include space;
             // #message {}
 
             // #timer {}
         }
-
-        #header {
+        header {
             @include align($ai: center);
             @include padding;
-            @include margin-x(2,2);
-            @include margin-y(4,2);
+            @include margin-x(2, 2);
+            @include margin-y(4, 2);
             height: 15vh;
 
-            #titles {
+            .titles {
                 @include margin-x;
                 @include align;
                 flex-direction: column;
@@ -79,7 +75,7 @@ $around: space-around;
                 // #sub-title {}
             }
 
-            #links {
+            .links {
                 @include align($jc: $around);
                 flex-direction: column;
                 @include margin;
@@ -89,8 +85,7 @@ $around: space-around;
                 }
             }
         }
-
-        #chapter-nav {
+        nav.chapters {
             @include align($jc: $around, $ai: center);
             @include padding;
             @include margin-y;
@@ -100,32 +95,37 @@ $around: space-around;
                 @include padding;
             }
         }
-
-        #chapter {
+        section.chapter {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             @include space;
-
-            #story-nav {
+            .title {
+                text-align: center;
+            }
+            nav.stories {
                 text-align: end;
                 @include space;
 
-                .story-link {
+                .link {
                     @include padding;
                 }
             }
-
-            #story {
-                #story-title {
+            div.story {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .title {
                     text-align: center;
                     @include margin-y(1.5, 0);
                     @include margin-x;
                 }
 
-                #story-content {
+                .content {
                     text-indent: $unit-x * 2;
                     line-height: 1.5;
                     @include margin;
-
+                    margin-top: 3vw;
                     p {
                         @include padding;
                     }

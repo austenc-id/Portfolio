@@ -11,7 +11,7 @@ $ubuntu: "Ubuntu", sans-serif;
 
 
 
-#body {
+body {
     background-color: $espresso;
 
     #app {
@@ -19,7 +19,7 @@ $ubuntu: "Ubuntu", sans-serif;
         font-family: $ubuntu;
         color: $froth;
 
-        #load-screen {
+        .load-screen {
             color: $lava;
 
             * {
@@ -27,24 +27,24 @@ $ubuntu: "Ubuntu", sans-serif;
             }
         }
 
-        #header {
+        header {
             background-color: $espresso;
 
-            #titles {
+            .titles {
 
-                #title {
+                h1.title {
                     color: $lava;
                     font-weight: normal;
                 }
 
-                #sub-title {
+                h2.title {
                     border-color: $froth;
                     color: $ocean;
                     background-color: $mocha;
                     font-weight: normal;
                 }
             }
-            #links {
+            .links {
                 svg {
                     fill: $forest;
                 }
@@ -53,7 +53,7 @@ $ubuntu: "Ubuntu", sans-serif;
 
 
 
-        #chapter-nav {
+        nav.chapters {
             cursor: pointer;
             background-color: $espresso;
 
@@ -74,8 +74,14 @@ $ubuntu: "Ubuntu", sans-serif;
             }
         }
 
-        #chapter {
-            #story-nav {
+        section.chapter {
+            svg {
+                fill: $lava;
+            }
+            .title {
+                color: $lava;
+            }
+            nav.stories {
                 cursor: pointer;
                 background-color: $espresso;
 
@@ -90,14 +96,15 @@ $ubuntu: "Ubuntu", sans-serif;
                 }
             }
 
-            #story {
-                #story-title {
+            div.story {
+
+                .title {
                     border-color: $froth;
                     color: $ocean;
                     background-color: $espresso;
                 }
 
-                #story-content {
+                .content {
                     color: $wave;
                     background-color: $espresso;
                 }
