@@ -150,6 +150,7 @@ section.chapter div.story .content {
   }
   body #app {
     margin: 4vw;
+    width: 90%;
   }
 }
 @media (min-width: 650px) {
@@ -157,7 +158,7 @@ section.chapter div.story .content {
     max-width: 750px;
   }
   #app section.chapter nav.stories {
-    width: fit-content;
+    width: 70%;
   }
   #app section.chapter nav.stories .link {
     padding: 0.5vw;
@@ -229,7 +230,7 @@ header .links {
   margin: 2vw 1vw;
 }
 header .links .link {
-  margin: 0.5vw 0;
+  margin: 1vw 0;
 }
 
 nav.chapters {
