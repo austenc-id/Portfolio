@@ -1,10 +1,5 @@
 name: deploy-heroku
-on:
-  push:
-    branches:
-      - main
-    paths:
-      -"server/**"
+on: [push]
 jobs:
   push-heroku:
     runs-on: ubuntu-latest
