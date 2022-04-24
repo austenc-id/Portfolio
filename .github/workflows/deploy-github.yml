@@ -15,12 +15,11 @@ jobs:
     # - name: Change Directory
     #   run: cd client
 
-    - name: Install Package
+    - name: Install Packages
       run: cd client; npm ci
 
     - name: Build App
-      run: ls
-    #   run: npm run build
+      run: cd client; npm run build
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.3.0
