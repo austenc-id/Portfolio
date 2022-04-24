@@ -1,5 +1,5 @@
 # Portfolio Applications
 
-## Frontend
+## [Frontend](../client/readme.md)
 
-## Backend
+## [Backend](../server/readme.md)
