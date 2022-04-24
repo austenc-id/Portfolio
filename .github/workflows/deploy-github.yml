@@ -12,8 +12,10 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install Package
+    - name: Change Directory
       run: cd client
+
+    - name: Install Package
       run: npm install
 
     - name: Build App
