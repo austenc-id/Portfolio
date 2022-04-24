@@ -30,9 +30,10 @@ SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 1
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-ALLOWED_HOSTS = ['acmf-dev.herokuapp.com',
-                 '127.0.0.1']
-
+ALLOWED_HOSTS = ['acmf-dev.herokuapp.com']
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
