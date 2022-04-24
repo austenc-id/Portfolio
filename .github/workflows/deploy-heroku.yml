@@ -11,4 +11,4 @@ jobs:
       run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/acmf-dev.git
 
     - name: Deploy Server to Heroku
-      run: git push heroku `git subtree split --prefix server main`:refs/head/main --force
+      run: git push heroku `git subtree split --prefix server main`:main --force
