@@ -1,5 +1,8 @@
 name: deploy-github
-on: [push]
+on:
+  push:
+    paths:
+      - "client/**"
 jobs:
   build-vue:
     runs-on: ubuntu-latest
