@@ -11,9 +11,15 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-    - run: npm install ./client
 
-    # - name: Build App
+    - name: Change Directory
+      run: cd client
+
+    - name: Install Package
+      run: npm ci
+
+    - name: Build App
+    #   run: npm run build
     #   run: npm run build
 
     - name: Deploy
