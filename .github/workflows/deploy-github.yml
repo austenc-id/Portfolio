@@ -12,14 +12,11 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Change Directory
-      run: cd client
-
     - name: Install Package
-      run: npm install
+      run: npm install ./client
 
-    - name: Build App
-      run: npm run build
+    # - name: Build App
+    #   run: npm run build
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.3.0
