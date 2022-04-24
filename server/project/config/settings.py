@@ -95,7 +95,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+DATABASE_URL = os.environ['DATABASE_URL']
 
 
 # Password validation
