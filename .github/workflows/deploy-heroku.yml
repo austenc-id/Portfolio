@@ -1,5 +1,10 @@
 name: deploy-heroku
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      -"server/**"
 jobs:
   push-heroku:
     runs-on: ubuntu-latest
@@ -8,7 +13,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Add Heroku Remote
-      runs: git remote add heroku https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/acmf-dev.git
+      run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/acmf-dev.git
 
     - name: Deploy Server to Heroku
-      runs: git push heroku `git subtree split --prefix server main`:refs/head/main --force
+      run: git push heroku `git subtree split --prefix server main`:refs/head/main --force
