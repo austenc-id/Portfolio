@@ -18,8 +18,8 @@ jobs:
     - name: Install Package
       run: cd client; npm ci
 
-    # - name: Build App
-    #   run: npm run build
+    - name: Build App
+      run: ls
     #   run: npm run build
 
     - name: Deploy
