@@ -1,0 +1,20 @@
+name: deploy-github
+on: [push]
+jobs:
+  build-vue:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: github
+          folder: client/dist
+    # - uses: actions/setup-node@v3
+    #   with:
+    #     node-version: '14'
+    # - run: cd client
+    # - run: npm install
+    # - run: npm run build
