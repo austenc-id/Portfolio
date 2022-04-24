@@ -11,18 +11,12 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-      run: cd client
-      run: npm ci
-      run: npm run build
+    - run: cd client
+    - run: npm ci
+    - run: npm run build
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.3.0
       with:
         branch: github
         folder: client/dist
-    # - uses: actions/setup-node@v3
-    #   with:
-    #     node-version: '14'
-    # - run: cd client
-    # - run: npm install
-    # - run: npm run build
