@@ -7,12 +7,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Build
+    - name: Install Node
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-    - run: cd client
-    - run: npm ci
+
+    - name: Install Package
+      run: cd client
+      run: npm install
+
+    - name: Build App
     - run: npm run build
 
     - name: Deploy
