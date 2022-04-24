@@ -4,8 +4,7 @@
             {{ story.title }}
         </h3>
         <div class="content">
-            <p v-for="paragraph in story.paragraphs">
-                {{ paragraph.content }}
+            <p v-for="paragraph in story.paragraphs" v-html="paragraph.content">
             </p>
         </div>
     </div>
