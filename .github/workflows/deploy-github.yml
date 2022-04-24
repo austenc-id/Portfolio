@@ -12,9 +12,6 @@ jobs:
       with:
         node-version: '14'
 
-    # - name: Change Directory
-    #   run: cd client
-
     - name: Install Packages
       run: cd client; npm ci
 
