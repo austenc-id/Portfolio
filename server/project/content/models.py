@@ -39,10 +39,15 @@ class Story(Model):
     def __str__(self):
         return self.title
 
+content_types = [
+    ('paragraph', 'paragraph'),
+    ('list', 'list'),
+]
 
 class Paragraph(Model):
     id = AutoField(primary_key=True)
     label = CharField(max_length=14)
+    type = TextField(choices=content_types)
     content = TextField()
 
     def __str__(self):
