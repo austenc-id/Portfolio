@@ -1,6 +1,8 @@
 name: deploy-github
 on:
   push:
+    branches:
+    - main
     paths:
       - "client/**"
 jobs:

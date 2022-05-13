@@ -1,6 +1,8 @@
 name: deploy-heroku
 on:
   push:
+  branches:
+    - main
     paths:
       - "server/**"
 jobs:
