@@ -1,6 +1,6 @@
 <template>
     <nav class="stories">
-        <h4 v-for="story in stories" :id="'story-' + story.id" @click="renderStory(story)" class="link story">
+        <h4 v-for="story in active.chapter.stories" :id="'story-' + story.id" @click="renderStory(story)" class="link story">
             {{ story.title }}
         </h4>
     </nav>
@@ -8,40 +8,30 @@
 </template>
 
 <script>
-import { utils } from '../../scripts/utils'
 import Story from './Story'
 
 
 export default {
     name: 'StoryNav',
-    props: {
-        stories: Array,
-        key: Number
-    },
     components: {
         Story,
     },
     mounted() {
-        this.renderStory(this.stories[0])
+        this.renderStory(this.active.chapter.stories[0])
     },
     updated() {
     },
     data() {
-        return {
-            active: {
-                story: false,
-            }
-        }
+        return this.$store.state
     },
     methods: {
         async renderStory(story) {
-            utils.resetActiveStory()
-            story.paragraphs.sort(utils.compareIDs)
+            // story.paragraphs.sort(utils.compareIDs)
             this.active.story = story
-            await utils.sleep(.01)
-                .then(timer => {
-                    document.getElementById(`story-${story.id}`).classList.add('active')
-                })
+            // await utils.sleep(.01)
+            //     .then(timer => {
+            //         document.getElementById(`story-${story.id}`).classList.add('active')
+            //     })
         },
     }
 }

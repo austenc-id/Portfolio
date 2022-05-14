@@ -1,10 +1,10 @@
 <template>
     <div class="story">
         <h3 class="title">
-            {{ story.title }}
+            {{ active.story.title }}
         </h3>
         <div class="content">
-            <p v-for="paragraph in story.paragraphs">
+            <p v-for="paragraph in active.story.paragraphs">
                 {{ paragraph.content }}
             </p>
         </div>
@@ -16,9 +16,9 @@
 
 export default {
     name: 'Story',
-    props: {
-        story: Object,
-    },
+    data(){
+        return this.$store.state
+    }
 
 }
 

@@ -1,10 +1,10 @@
 <template>
     <main class="load-screen">
         <h1 class="message">
-            {{ message }}
+            {{ loading.message }}
         </h1>
         <h2 class="timer">
-            {{ time }}
+            {{ loading.time }}
         </h2>
     </main>
 </template>
@@ -12,9 +12,8 @@
 <script>
 export default {
     name: 'LoadScreen',
-    props: {
-        message: String,
-        time: [String, Number],
+    data(){
+        return this.$store.state
     }
   }
 </script>

@@ -16,9 +16,8 @@
 <script>
 export default {
     name: 'Header',
-    props: {
-        titles: Object,
-        links: Object,
+    data(){
+        return this.$store.state
     }
 }
 </script>

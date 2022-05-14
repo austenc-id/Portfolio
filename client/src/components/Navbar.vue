@@ -8,14 +8,10 @@
 </template>
 
 <script>
-import { utils } from '../scripts/utils'
 import Chapter from './Chapter'
 
 export default {
     name: 'Navbar',
-    props: {
-        chapters: Array,
-    },
     components: {
         Chapter,
     },
@@ -23,12 +19,7 @@ export default {
         this.renderChapter(this.chapters[0])
     },
     data() {
-        return {
-            active: {
-                chapter: false,
-            },
-            key: 0
-        }
+        return this.$store.state
     },
     methods: {
         keyChange() {
@@ -36,13 +27,13 @@ export default {
         },
         async renderChapter(chapter) {
             this.keyChange()
-            chapter.stories.sort(utils.compareIDs)
+            // chapter.stories.sort(utils.compareIDs)
             this.active.chapter = chapter
-            utils.resetActiveElements()
-            await utils.sleep(.01)
-                .then(timer => {
-                    document.getElementById(`chapter-${chapter.id}`).classList.add('active')
-                })
+            // utils.resetActiveElements()
+            // await utils.sleep(.01)
+            //     .then(timer => {
+            //         document.getElementById(`chapter-${chapter.id}`).classList.add('active')
+            //     })
         },
     }
 }

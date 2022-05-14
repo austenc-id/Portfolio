@@ -1,7 +1,7 @@
 <template>
     <section class="chapter">
-        <h1 class="title" v-html="chapter.title"></h1>
-        <StoryNav :stories="chapter.stories" />
+        <h1 class="title" v-html="active.chapter.title"></h1>
+        <StoryNav :stories="active.chapter.stories" />
 
     </section>
 </template>
@@ -14,9 +14,9 @@ export default {
     components: {
         StoryNav,
     },
-    props: {
-        chapter: Object,
-    },
+    data(){
+        return this.$store.state
+    }
 }
 
 </script>
